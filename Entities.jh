@@ -1,0 +1,6 @@
+entity Office {
+	name String,
+	location String,
+    type String,
+    parentOffice String
+}

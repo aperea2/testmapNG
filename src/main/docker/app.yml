@@ -1,0 +1,22 @@
+version: '2'
+services:
+    leafng-app:
+        image: leafng
+        external_links:
+            - leafng-postgresql:postgresql
+            - leafng-elasticsearch:elasticsearch
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresql:5432/leafNG
+            - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
+            - SPRING_DATA_ELASTICSEARCH_CLUSTER_NODES=elasticsearch:9300
+        ports:
+            - 8080:8080
+    leafng-postgresql:
+        extends:
+            file: postgresql.yml
+            service: leafng-postgresql
+    leafng-elasticsearch:
+        extends:
+            file: elasticsearch.yml
+            service: leafng-elasticsearch

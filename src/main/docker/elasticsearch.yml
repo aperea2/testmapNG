@@ -1,0 +1,10 @@
+version: '2'
+services:
+    leafng-elasticsearch:
+        container_name: leafng-elasticsearch
+        image: elasticsearch:1.7.5
+        # volumes:
+        #     - ~/volumes/jhipster/leafNG/elasticsearch/:/usr/share/elasticsearch/data/
+        ports:
+            - 9200:9200
+            - 9300:9300

@@ -1,0 +1,12 @@
+version: '2'
+services:
+    leafng-postgresql:
+        container_name: leafng-postgresql
+        image: postgres:9.5.2
+        # volumes:
+        #     - ~/volumes/jhipster/leafNG/postgresql/:/var/lib/postgresql/
+        environment:
+            - POSTGRES_USER=leafNG
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432
